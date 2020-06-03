@@ -1,0 +1,37 @@
+.container {
+    margin: 20px auto;
+  }
+  
+#demo{
+  text-shadow: 2px 2px 5px red;
+}
+
+  .img-fluid {
+    width: 70%
+  }
+  
+  @media only screen and (max-width: 767px) {
+    /* For mobile phones: */
+    [class="img-fluid"] {
+      max-height: 400px;
+      object-fit: cover;
+    }
+  }
+  
+  .similar-poster {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-img-overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 30%);
+  }
+  
+  .card-title {
+    color: #fff;
+  }
+  
+  .badge {
+    margin-right: 30px;
+  }

@@ -1,0 +1,68 @@
+<!-- Page Content -->
+<div 
+  class="container"
+  *ngIf="movieDetils$ | async as movie">
+
+  
+  <button class="btn btn-dark" routerLink="/">Go Back</button><br><br>
+
+   <div>
+   <h1 id="demo">{{ movie.Title }}</h1>
+</div>    
+      <b><label>Rated:&nbsp;</label></b>
+      <span class="badge badge-primary">
+       {{movie.Rated}}
+      </span><br>
+
+      <b><label>Director:&nbsp;</label></b> 
+      <span class="badge badge-primary">{{movie.Director}}</span><br>
+     
+     <b><label>Genre:&nbsp;</label></b>
+     <span class="badge badge-primary">{{movie.Genre}}</span><br>
+
+     <b><label>Writer:&nbsp;</label></b>
+     <span class="badge badge-primary">{{movie.Writer}}</span><br>
+
+     <b><label>Actors:&nbsp;</label></b>
+     <span class="badge badge-primary">{{movie.Actors}}</span><br>
+
+     <b><label>Language:&nbsp;</label></b>
+     <span class="badge badge-primary">{{movie.Language}}</span><br>
+    
+    
+  
+
+
+  <div class="row">
+
+    <div class="col-md-8">
+      <img 
+        class="img-fluid" 
+        [src]="movie.Poster" 
+        [alt]="movie.Title">
+    </div>
+
+  
+     
+  </div>
+
+
+ 
+  <div *ngIf="movie.similarMovies.length > 0">
+    <h3 class="my-4">Similar Movies</h3>
+    <div class="row">
+      <div 
+        class="col-md-3 col-sm-6 mb-4"
+        *ngFor="let similarMovie of movie.similarMovies">
+        <a 
+          routerLink="/movie-detail" 
+          [queryParams]="{ movieId: similarMovie.imdbID }" >
+          <img 
+            class="img-fluid similar-poster" 
+            [src]="similarMovie.Poster" 
+            [alt]="similarMovie.Title">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

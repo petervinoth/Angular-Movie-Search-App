@@ -1,0 +1,22 @@
+<div class="card">
+	<img 
+    [src]="movie.Poster" 
+    class="card-img-top" 
+    [alt]="movie.Title">
+	<div class="card-body">
+		<h5 class="card-title">
+     <b> {{ movie.Title}}</b>
+			<span class="badge badge-success">{{ movie.Type | uppercase }}</span>
+    </h5>
+		<p class="card-text">
+      {{ movie.Title }} is a {{ movie.Type }} that was released in {{ movie.Year }}
+    </p>
+    <a 
+    routerLink="/movie-detail" 
+    [queryParams]="{ movieId: movie.imdbID }" 
+    class="btn btn-danger">
+          Learn More
+      </a>
+  </div>
+</div>
+	
